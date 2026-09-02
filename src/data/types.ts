@@ -34,7 +34,7 @@ export interface Ticket {
   descricao: string;
   categoria: TicketCategory;
   subcategoria: string;
-  equipamento?: string;
+  equipamento?: string | undefined;
   status: TicketStatus;
   prioridade: TicketPriority;
   solicitante: string;
