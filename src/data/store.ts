@@ -56,7 +56,7 @@ export const unidades = [
   "Remoto",
 ];
 
-const solicitantes = [
+const solicitantes: [string, string, string][] = [
   ["Carla Ribeiro", "carla.ribeiro@empresa.com.br", "Financeiro"],
   ["Paulo Henrique", "paulo.h@empresa.com.br", "Comercial"],
   ["Fernanda Lima", "fernanda.lima@empresa.com.br", "RH"],
@@ -408,8 +408,8 @@ const seeds: Seed[] = [
 ];
 
 function buildTicket(seed: Seed, index: number): Ticket {
-  const [nome, email, setor] = solicitantes[index % solicitantes.length];
-  const unidade = unidades[index % unidades.length];
+  const [nome, email, setor] = solicitantes[index % solicitantes.length]!;
+  const unidade = unidades[index % unidades.length]!;
   const criadoEm = iso(-seed.criadoHa);
   const timeline: TimelineEvent[] = [
     {
